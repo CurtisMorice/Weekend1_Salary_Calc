@@ -26,43 +26,36 @@ function readyNow() {
 //create a function that calculates the total salaries of the employees
 function addEmployee() {
     console.log('In addEmployee');
-    //$('').empty();
+
     let newEmployee = new Employee($('#firstName').val(), $('#lastName').val(), $('#employeeId').val(), $('#title').val(), $('#annualSalary').val());
     employees.push(newEmployee);
     console.log(employees);
     displayEmployees();
-    //create spread of employee info
-    //push into an array
+    $('#firstName').val(''), $('#lastName').val(''), $('#employeeId').val(''), $('#title').val(''), $('#annualSalary').val('');
+
 
 
 } // add Employee
+
 function displayEmployees() {
     console.log("in displayEmployees");
     let el = $('#outputInfo');
     el.empty();
+
     for (employee of employees) {
-        let outputString = '<td>';
 
-        outputString += employee.firstName;
-        outputString += '</td>';
-
-        outputString += '<td>';
-        outputString += employee.lastName;
-        outputString += '</td>';
-
-        outputString += '<td>';
-        outputString += employee.employeeId;
-        outputString += '</td>';
-
-        outputString += '<td>';
-        outputString += employee.title;
-        outputString += '</td>';
-
-        outputString += '<td>';
-        outputString += employee.annualSalary;
-        outputString += '</td>';
-
+        let outputString = '<tr class="table-dark">';
+        outputString += '<td>' + employee.firstName + '</td>' + '<td>' + employee.lastName + '</td>' + '<td>' + employee.employeeId + '</td>' + '<td>' + employee.title + '</td>' + '<td>' + employee.annualSalary + '</td>' + '</tr>';
         el.append(outputString);
+
+
+
 
     } // end for
 }
+
+//A 'Submit' button should collect the form information, store the information 
+//to calculate monthly costs, append information to the DOM and clear the input 
+//fields. Using the stored information, calculate monthly costs and append this 
+//to the to DOM. If the total monthly cost exceeds $20,000, add a red background
+//color to the total monthly cost.
