@@ -16,46 +16,58 @@
 </head>
 
 <body>
-    <h1>Salary Calculator</h1>
-    <div class="container">
-        <div class="input">
-            <h2>Add Employee's Information</h2>
-            <input type="text" placeholder="First Name " id="firstName">
-            <input type="text" placeholder="Last Name " id="lastName">
-            <input type="number" placeholder="Employee ID " id="employeeId">
-            <input type="text" placeholder="Title ID " id="title">
-            <input type="number" placeholder="Salary " id="annualSalary">
-            <button id="addButton"> Add Employee </button>
+    <header>
+        <h1>Salary Calculator</h1>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="input">
+                    <h2>Add Employee's Information</h2>
+                    <input type="text" placeholder="First Name " id="firstName">
+                    <input type="text" placeholder="Last Name " id="lastName">
+                    <input type="number" placeholder="Employee ID " id="employeeId">
+                    <input type="text" placeholder="Title ID " id="title">
+                    <input type="number" placeholder="Salary " id="annualSalary">
+                    <button id="addButton"> Add Employee </button>
+                </div>
+        </section>
+        <section>
+            <div id="output">
+                <h2>Employees Annual Salary Chart</h2>
+                <table style="width:100%" class="table table-dark">
+                    <thead>
+                        <tr id="tableHeader">
+                            <th>First Name:</th>
+                            <th>Last Name:</th>
+                            <th>Employee Id:</th>
+                            <th>Title:</th>
+                            <th>Annual Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody id="outputInfo">
+
+                    </tbody>
+                    <tfoot id="tfoot">
+                        <th>End of List</th>
+
+                    </tfoot>
+                    <section>
+                        <input type="text" placeholder="ID Number To Delete" id="IdDelete">
+                        <button id="deleteButton">DELETE EMPLOYEE</button>
+                    </section>
+            </div>
+
+            </table>
+        </section>
+        <section>
+            <div id="moneyBox">
+                <h4 id="totalMoney">Total Monthly Salaries: $<span id="span">0.00</span></h4>
+
+            </div>
+        </section>
         </div>
-        <div id="output">
-            <h2>Employees Annual Salary Chart</h2>
-            <table style="width:100%" class="table table-dark">
-                <thead>
-                    <tr id="tableHeader">
-                        <th>First Name:</th>
-                        <th>Last Name:</th>
-                        <th>Employee Id:</th>
-                        <th>Title:</th>
-                        <th>Annual Salary</th>
-                    </tr>
-                </thead>
-                <tbody id="outputInfo">
-
-                </tbody>
-                <tfoot id="tfoot">
-                    <th>End of List</th>
-
-                </tfoot>
-        </div>
-        </table>
-        <div id="moneyBox">
-            <h4 id="totalMoney">Total Monthly Salaries: $<span id="span">0.00</span></h4>
-
-        </div>
-    </div>
-
-
-
+    </main>
 </body>
 
 </html>

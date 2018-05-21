@@ -17,7 +17,17 @@ function readyNow() {
     console.log('JQ');
 
     $('#addButton').on('click', addEmployee);
+    $('#deleteButton').on('click', handleDelete);
 
+}
+
+function handleDelete() {
+    const idToDelete = $("#IdDelete").val();
+    for (let i = 0; i < employees.length; i++) {
+        if (idToDelete === employees[i].employeeId)
+            employees.splice(i, 1);
+    }
+    displayEmployees();
 }
 
 // add on click even for each button
