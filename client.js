@@ -31,6 +31,9 @@ function addEmployee() {
     employees.push(newEmployee);
     console.log(employees);
     displayEmployees();
+    calculateSalary();
+
+
     $('#firstName').val(''), $('#lastName').val(''), $('#employeeId').val(''), $('#title').val(''), $('#annualSalary').val('');
 
 
@@ -42,10 +45,10 @@ function displayEmployees() {
     let el = $('#outputInfo');
     el.empty();
 
-    for (employee of employees) {
+    for (let employee of employees) {
 
         let outputString = '<tr class="table-dark">';
-        outputString += '<td>' + employee.firstName + '</td>' + '<td>' + employee.lastName + '</td>' + '<td>' + employee.employeeId + '</td>' + '<td>' + employee.title + '</td>' + '<td>' + employee.annualSalary + '</td>' + '</tr>';
+        outputString += '<td>' + employee.firstName + '</td>' + '<td>' + employee.lastName + '</td>' + '<td>' + employee.employeeId + '</td>' + '<td>' + employee.title + '</td>' + '<td class="yearCash" >' + employee.annualSalary + '</td>' + '</tr>';
         el.append(outputString);
 
 
@@ -53,6 +56,23 @@ function displayEmployees() {
 
     } // end for
 }
+
+function calculateSalary() {
+    let sum = 0;
+    $('#span').empty();
+    for (let salary of employees) {
+        sum += (salary.annualSalary / 12);
+    } //end for 
+    let num = sum.toFixed(2);
+    $('#span').append(num);
+    if (num > 20000) {
+        $('#span').css("background-color", "red");
+    } else {
+        $('#span').css("background-color", '#518282');
+    } // end if/else
+} // end calculateSalary
+
+
 
 //A 'Submit' button should collect the form information, store the information 
 //to calculate monthly costs, append information to the DOM and clear the input 
